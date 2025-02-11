@@ -30,12 +30,12 @@
 
     /* Vergr��erte Suchleiste bei Fokus */
     #searchInput:focus {
-        width: 20rem; /* 80px */
+        width: 10rem; /* 80px */
     }
 
 /* Vergr��erte Suchleiste bei Klick auf den Suchbutton */
 .search-expanded {
-    width: 20rem; /* 80px */
+    width: 10rem; /* 80px */
 }
 
 /* Spendenaufruf an der Seite */
