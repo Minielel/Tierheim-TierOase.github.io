@@ -1,345 +1,403 @@
 <html>
-<head>
-    <title>
-        TierOase
-    </title>
-    <script src="https://cdn.tailwindcss.com">
-    </script>
-    <script src="app.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link href="style.css" rel="stylesheet" />
-
-</head>
-<body class="bg-[#e6dfd3] min-h-screen">
-    <header class="bg-white shadow-md">
-        <div class="container mx-auto flex items-center justify-between p-4">
-            <div class="flex items-center">
-                <img alt="Logo with a dog and a cat inside a circle" class="h-16 w-16 mr-4" height="100" src="https://storage.googleapis.com/a1aa/image/zqMLKaW52CtBan8AwAxwmusab1Ng7PiBZ3wcSouY2l8.jpg" width="100" />
-                <h1 class="text-3xl font-bold text-black">
-                    Tier
-                    <span class="relative">
-                        <span class="absolute inset-0 flex items-center justify-center">
-                            <i class="fas fa-paw text-black">
-                            </i>
-                        </span>
-                        <span class="opacity-0">
-                            O
-                        </span>
-                    </span>
-                    ase
-                </h1>
-            </div>
-            <nav class="flex items-center space-x-4">
-                <ul class="flex space-x-4">
-                    <li>
-                        <a class="text-lg text-black hover:text-gray-700" href="#home">
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a class="text-lg text-black hover:text-gray-700" href="#partnerships">
-                            Patenschaften
-                        </a>
-                    </li>
-                    <li>
-                        <a class="text-lg text-black hover:text-gray-700" href="#appointments">Termin Vereinbarung
-
-                        </a>
-                    </li>
-                    <li>
-                        <a class="text-lg text-black hover:text-gray-700" href="#appointments">
-                            Termin Vereinbarung
-                        </a>
-                    </li>
-                    <li>
-                        <a class="text-lg text-black hover:text-gray-700" href="#about">
-                            Über Uns
-                        </a>
-                    </li>
-                    <li>
-                        <a class="text-lg text-black hover:text-gray-700" href="#hours">
-                            Öffnungszeiten
-                        </a>
-                    </li>
-                    <li>
-                        <a class="text-lg text-black hover:text-gray-700" href="#contact">
-                            Kontakt
-                        </a>
-                    </li>
-                    <li>
-                        <a class="text-lg text-black hover:text-gray-700" href="#quiz">
-                            Perfektes Haustier
-                        </a>
-                    </li>
-                    <li>
-                        <a class="text-lg text-black hover:text-gray-700" href="#donate">
-                            Spenden
-                        </a>
-                    </li>
-                </ul>
-                <div class="relative flex items-center">
-                    <input class="border border-gray-300 rounded-full py-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500" id="searchInput" onblur="collapseSearch()" placeholder="Suche..." type="text" />
-                    <button class="ml-2 bg-[#DE7C46] text-white px-4 py-2 rounded-full hover:bg-[#c96e3f]" onclick="toggleSearch()">
-                        <i class="fas fa-search">
-                        </i>
-                    </button>
-                </div>
-            </nav>
-        </div>
-    </header>
-    <div class="container mx-auto p-4 flex">
-        <main class="w-3/4">
-            <section class="mb-8" id="home">
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h2 class="text-2xl font-bold mb-4">
-                        Willkommen bei TierOase
-                    </h2>
-                    <p class="text-lg mb-4">
-                        Wir freuen uns, dass Sie unsere Website besuchen. Hier finden Sie alle Informationen Über unser Tierheim und wie Sie uns unterstützen können.
-                    </p>
-                </div>
-            </section>
-            <section class="mb-8" id="partnerships">
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h2 class="text-2xl font-bold mb-4">
-                        Patenschaften
-                    </h2>
-                    <p class="text-lg mb-4">
-                        Unterstützen Sie uns durch eine Patenschaft und helfen Sie uns, den Tieren ein besseres Leben zu ermöglichen. Ihre Spende trägt zur Pflege, Fütterung und medizinischen Versorgung der Tiere bei.
-                    </p>
-                    <button class="bg-[#DE7C46] text-white px-4 py-2 rounded-full hover:bg-[#c96e3f]">
-                        Mehr erfahren
-                    </button>
-                </div>
-            </section>
-        </section>
-        <section class="mb-8" id="appointments">
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h2 class="text-2xl font-bold mb-4">Termin Vereinbarung</h2>
-                <p class="text-lg mb-4">Vereinbaren Sie einen Termin, um unser Tierheim zu besuchen und mehr Über unsere Arbeit zu erfahren. Wir freuen uns darauf, Sie kennenzulernen!</p>
-                <form onsubmit="event.preventDefault(); bookAppointment();">
-                    <div class="mb-4">
-                        <label class="block text-lg mb-2" for="appointmentDate">Datum</label>
-                        <input class="border border-gray-300 rounded w-full py-2 px-3" id="appointmentDate" type="date" required />
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-lg mb-2" for="appointmentTime">Uhrzeit</label>
-                        <select class="border border-gray-300 rounded w-full py-2 px-3" id="appointmentTime" required>
-                            <option value="">Bitte wählen...</option>
-                            <option value="10:00">10:00</option>
-                            <option value="11:00">11:00</option>
-                            <option value="12:00">12:00</option>
-                            <option value="13:00">13:00</option>
-                            <option value="14:00">14:00</option>
-                            <option value="15:00">15:00</option>
-                            <option value="16:00">16:00</option>
-                            <option value="17:00">17:00</option>
-                        </select>
-                    </div>
-                    <button class="bg-[#DE7C46] text-white px-4 py-2 rounded-full hover:bg-[#c96e3f]" type="submit">Termin vereinbaren</button>
-                </form>
-            </div>
-        </section>
-            <section class="mb-8" id="appointments">
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h2 class="text-2xl font-bold mb-4">
-                        Termin Vereinbarung
-                    </h2>
-                    <p class="text-lg mb-4">
-                        Vereinbaren Sie einen Termin, um unser Tierheim zu besuchen und mehr Über unsere Arbeit zu erfahren. Wir freuen uns darauf, Sie kennenzulernen!
-                    </p>
-                    <button class="bg-[#DE7C46] text-white px-4 py-2 rounded-full hover:bg-[#c96e3f]">
-                        Termin vereinbaren
-                    </button>
-                </div>
-            </section>
-            <section class="mb-8" id="about">
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h2 class="text-2xl font-bold mb-4">
-                        Über Uns
-                    </h2>
-                    <p class="text-lg mb-4">
-                        Vor 25 Jahren wurde das Tierheim Sonnenhof gegründet, um herrenlosen und misshandelten Tieren eine zweite Chance zu geben. Heute erstreckt sich das Tierheim Über 3 Hektar Land und bietet Platz für bis zu 247 Tiere gleichzeitig. Dank zahlreicher Adoptionen finden jedes Jahr Über 300 Tiere ein neues Zuhause.
-                    </p>
-                </div>
-            </section>
-            <section class="mb-8" id="hours">
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h2 class="text-2xl font-bold mb-4">
-                        Öffnungszeiten
-                    </h2>
-                    <ul class="list-disc list-inside mb-4">
-                        <li>
-                            Montag - Freitag: 10:00 - 18:00 Uhr
-                        </li>
-                        <li>
-                            Samstag: 10:00 - 14:00 Uhr
-                        </li>
-                        <li>
-                            Sonntag: Geschlossen
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <section class="mb-8" id="contact">
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h2 class="text-2xl font-bold mb-4">
-                        Standort und Kontakt
-                    </h2>
-                    <p class="text-lg mb-2">
-                        <strong>
-                            Adresse:
-                        </strong>
-                        Waldweg 12, 12345 Tierstadt, Deutschland
-                    </p>
-                    <p class="text-lg mb-2">
-                        <strong>
-                            Telefon:
-                        </strong>
-                        +49 123 456789
-                    </p>
-                    <p class="text-lg mb-2">
-                        <strong>
-                            E-Mail:
-                        </strong>
-                        info@tierheim-Tieroase.de
-                    </p>
-                    <p class="text-lg mb-2">
-                        <strong>
-                            Website:
-                        </strong>
-                        www.tierheim-Tieroase.de
-                    </p>
-                </div>
-            </section>
-            <section class="mb-8" id="quiz">
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h2 class="text-2xl font-bold mb-4">
-                        Finden Sie Ihr perfektes Haustier
-                    </h2>
-                    <p class="text-lg mb-4">
-                        Nutzen Sie unser KI-Tool, eines der besten auf dem Markt, um Ihr perfektes Haustier aus unserem Tierheim zu finden.
-                    </p>
-                    <form onsubmit="event.preventDefault(); findPerfectPet();">
-                        <div class="mb-4">
-                            <label class="block text-lg mb-2" for="activityLevel">
-                                Wie aktiv sind Sie?
-                            </label>
-                            <select class="border border-gray-300 rounded w-full py-2 px-3" id="activityLevel" required="">
-                                <option value="">
-                                    Bitte wählen...
-                                </option>
-                                <option value="low">
-                                    Wenig aktiv
-                                </option>
-                                <option value="medium">
-                                    Mittel aktiv
-                                </option>
-                                <option value="high">
-                                    Sehr aktiv
-                                </option>
-                            </select>
-                        </div>
-                        <div class="mb-4">
-                            <label class="block text-lg mb-2" for="homeType">
-                                Welche Art von Zuhause haben Sie?
-                            </label>
-                            <select class="border border-gray-300 rounded w-full py-2 px-3" id="homeType" required="">
-                                <option value="">
-                                    Bitte wählen...
-                                </option>
-                                <option value="apartment">
-                                    Wohnung
-                                </option>
-                                <option value="house">
-                                    Haus mit Garten
-                                </option>
-                            </select>
-                        </div>
-                        <div class="mb-4">
-                            <label class="block text-lg mb-2" for="petType">
-                                Welche Art von Haustier bevorzugen Sie?
-                            </label>
-                            <select class="border border-gray-300 rounded w-full py-2 px-3" id="petType" required="">
-                                <option value="">
-                                    Bitte wählen...
-                                </option>
-                                <option value="dog">
-                                    Hund
-                                </option>
-                                <option value="cat">
-                                    Katze
-                                </option>
-                                <option value="small">
-                                    Kleintier
-                                </option>
-                            </select>
-                        </div>
-                        <div class="mb-4">
-                            <label class="block text-lg mb-2" for="allergies">
-                                Haben Sie Allergien gegen Tiere?
-                            </label>
-                            <select class="border border-gray-300 rounded w-full py-2 px-3" id="allergies" required="">
-                                <option value="">
-                                    Bitte wählen...
-                                </option>
-                                <option value="yes">
-                                    Ja
-                                </option>
-                                <option value="no">
-                                    Nein
-                                </option>
-                            </select>
-                        </div>
-                        <button class="bg-[#DE7C46] text-white px-4 py-2 rounded-full hover:bg-[#c96e3f]" type="submit">
-                            Perfektes Haustier finden
-                        </button>
-                    </form>
-                </div>
-            </section>
-        </main>
-        <aside style="position: sticky !important" class="w-1/4 pl-4">
-            <div class="sidebar mb-8">
-                <h2 class="text-xl font-bold mb-2">
-                    Spenden
-                </h2>
-                <p class="mb-4">
-                    Unterstützen Sie unser Tierheim mit einer Spende. Jeder Betrag hilft uns, die Tiere zu versorgen und ihnen ein besseres Leben zu ermöglichen.
-                </p>
-                <form onsubmit="event.preventDefault(); donate();">
-                    <div class="mb-4">
-                        <label class="block text-lg mb-2" for="donationAmount">
-                            Betrag (in Euro)
-                        </label>
-                        <textarea style="color: black" class="border border-gray-300 rounded w-full py-2 px-3" id="donationAmount" required="" type="number"></textarea>
-                    </div>
-                    
-
-                    <button class="bg-white text-[#000000] px-4 py-2 rounded-full hover:bg-gray-200" type="submit">
-                        Spenden
-                    </button>
-                </form>
-            </div>
-            <div class="sidebar">
-                <h2 class="text-xl font-bold mb-2">
-                    Chat Bot
-                </h2>
-                <p class="mb-4">
-                    Stellen Sie uns Ihre Fragen und wir helfen Ihnen gerne weiter.
-                </p>
-                <form onsubmit="event.preventDefault(); sendMessage();">
-                    <div class="mb-4">
-                        <label class="block text-lg mb-2" for="chatMessage">
-                            Nachricht
-                        </label>
-                        <textarea style="color: black" class="border border-gray-300 rounded w-full py-2 px-3" id="chatMessage" required="" rows="4"></textarea>
-                    </div>
-                    <button class="bg-white text-[#DE7C46] px-4 py-2 rounded-full hover:bg-gray-200" type="submit">
-                        Senden
-                    </button>
-                </form>
-            </div>
-        </aside>
+ <head>
+  <title>
+   TierOase
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body class="bg-[#e6dfd3] min-h-screen">
+  <header class="bg-white shadow-md">
+   <div class="container mx-auto flex items-center justify-between p-4">
+    <div class="flex items-center">
+     <img alt="Logo with a dog and a cat inside a circle" class="h-16 w-16 mr-4" height="100" src="https://storage.googleapis.com/a1aa/image/CYVZhdjj2vtfh_trlEWWF4szf9zQM1cgxOEJ1R03OTA.jpg" width="100"/>
+     <h1 class="text-3xl font-bold text-black">
+      Tier
+      <span class="relative">
+       <span class="absolute inset-0 flex items-center justify-center">
+        <i class="fas fa-paw text-black">
+        </i>
+       </span>
+       <span class="opacity-0">
+        O
+       </span>
+      </span>
+      ase
+     </h1>
     </div>
-</body>
+    <nav class="hidden md:flex items-center space-x-4">
+     <ul class="flex space-x-4">
+      <li>
+       <a class="text-lg text-black hover:text-gray-700" href="#home">
+        Home
+       </a>
+      </li>
+      <li>
+       <a class="text-lg text-black hover:text-gray-700" href="#partnerships">
+        Patenschaften
+       </a>
+      </li>
+      <li>
+       <a class="text-lg text-black hover:text-gray-700" href="#appointments">
+        Termin Vereinbarung
+       </a>
+      </li>
+      <li>
+       <a class="text-lg text-black hover:text-gray-700" href="#about">
+        Über Uns
+       </a>
+      </li>
+      <li>
+       <a class="text-lg text-black hover:text-gray-700" href="#hours">
+        Öffnungszeiten
+       </a>
+      </li>
+      <li>
+       <a class="text-lg text-black hover:text-gray-700" href="#contact">
+        Kontakt
+       </a>
+      </li>
+      <li>
+       <a class="text-lg text-black hover:text-gray-700" href="#quiz">
+        Perfektes Haustier
+       </a>
+      </li>
+      <li>
+       <a class="text-lg text-black hover:text-gray-700" href="#donate">
+        Spenden
+       </a>
+      </li>
+     </ul>
+     <div class="relative flex items-center">
+      <input class="border border-gray-300 rounded-full py-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500" id="searchInput" onblur="collapseSearch()" placeholder="Suche..." type="text"/>
+      <button class="ml-2 bg-[#DE7C46] text-white px-4 py-2 rounded-full hover:bg-[#c96e3f]" onclick="toggleSearch()">
+       <i class="fas fa-search">
+       </i>
+      </button>
+     </div>
+    </nav>
+    <button class="md:hidden text-black" onclick="toggleMobileMenu()">
+     <i class="fas fa-bars">
+     </i>
+    </button>
+   </div>
+   <nav class="md:hidden hidden" id="mobileMenu">
+    <ul class="flex flex-col space-y-2 p-4">
+     <li>
+      <a class="text-lg text-black hover:text-gray-700" href="#home">
+       Home
+      </a>
+     </li>
+     <li>
+      <a class="text-lg text-black hover:text-gray-700" href="#partnerships">
+       Patenschaften
+      </a>
+     </li>
+     <li>
+      <a class="text-lg text-black hover:text-gray-700" href="#appointments">
+       Termin Vereinbarung
+      </a>
+     </li>
+     <li>
+      <a class="text-lg text-black hover:text-gray-700" href="#about">
+       Über Uns
+      </a>
+     </li>
+     <li>
+      <a class="text-lg text-black hover:text-gray-700" href="#hours">
+       Öffnungszeiten
+      </a>
+     </li>
+     <li>
+      <a class="text-lg text-black hover:text-gray-700" href="#contact">
+       Kontakt
+      </a>
+     </li>
+     <li>
+      <a class="text-lg text-black hover:text-gray-700" href="#quiz">
+       Perfektes Haustier
+      </a>
+     </li>
+     <li>
+      <a class="text-lg text-black hover:text-gray-700" href="#donate">
+       Spenden
+      </a>
+     </li>
+    </ul>
+   </nav>
+  </header>
+  <div class="container mx-auto p-4 flex flex-col md:flex-row">
+   <main class="w-full md:w-3/4">
+    <section class="mb-8" id="home">
+     <div class="bg-white p-6 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-bold mb-4">
+       Willkommen bei TierOase
+      </h2>
+      <p class="text-lg mb-4">
+       Wir freuen uns, dass Sie unsere Website besuchen. Hier finden Sie alle Informationen Über unser Tierheim und wie Sie uns unterstützen können.
+      </p>
+     </div>
+    </section>
+    <section class="mb-8" id="partnerships">
+     <div class="bg-white p-6 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-bold mb-4">
+       Patenschaften
+      </h2>
+      <p class="text-lg mb-4">
+       Unterstützen Sie uns durch eine Patenschaft und helfen Sie uns, den Tieren ein besseres Leben zu ermöglichen. Ihre Spende trägt zur Pflege, Fütterung und medizinischen Versorgung der Tiere bei.
+      </p>
+      <button class="bg-[#DE7C46] text-white px-4 py-2 rounded-full hover:bg-[#c96e3f]">
+       Mehr erfahren
+      </button>
+     </div>
+    </section>
+    <section class="mb-8" id="appointments">
+     <div class="bg-white p-6 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-bold mb-4">
+       Termin Vereinbarung
+      </h2>
+      <p class="text-lg mb-4">
+       Vereinbaren Sie einen Termin, um unser Tierheim zu besuchen und mehr Über unsere Arbeit zu erfahren. Wir freuen uns darauf, Sie kennenzulernen!
+      </p>
+      <form onsubmit="event.preventDefault(); bookAppointment();">
+       <div class="mb-4">
+        <label class="block text-lg mb-2" for="appointmentDate">
+         Datum
+        </label>
+        <input class="border border-gray-300 rounded w-full py-2 px-3" id="appointmentDate" required="" type="date"/>
+       </div>
+       <div class="mb-4">
+        <label class="block text-lg mb-2" for="appointmentTime">
+         Uhrzeit
+        </label>
+        <select class="border border-gray-300 rounded w-full py-2 px-3" id="appointmentTime" required="">
+         <option value="">
+          Bitte wählen...
+         </option>
+         <option value="10:00">
+          10:00
+         </option>
+         <option value="11:00">
+          11:00
+         </option>
+         <option value="12:00">
+          12:00
+         </option>
+         <option value="13:00">
+          13:00
+         </option>
+         <option value="14:00">
+          14:00
+         </option>
+         <option value="15:00">
+          15:00
+         </option>
+         <option value="16:00">
+          16:00
+         </option>
+         <option value="17:00">
+          17:00
+         </option>
+        </select>
+       </div>
+       <button class="bg-[#DE7C46] text-white px-4 py-2 rounded-full hover:bg-[#c96e3f]" type="submit">
+        Termin vereinbaren
+       </button>
+      </form>
+     </div>
+    </section>
+    <section class="mb-8" id="about">
+     <div class="bg-white p-6 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-bold mb-4">
+       Über Uns
+      </h2>
+      <p class="text-lg mb-4">
+       Vor 25 Jahren wurde das Tierheim Sonnenhof gegründet, um herrenlosen und misshandelten Tieren eine zweite Chance zu geben. Heute erstreckt sich das Tierheim Über 3 Hektar Land und bietet Platz für bis zu 247 Tiere gleichzeitig. Dank zahlreicher Adoptionen finden jedes Jahr Über 300 Tiere ein neues Zuhause.
+      </p>
+     </div>
+    </section>
+    <section class="mb-8" id="hours">
+     <div class="bg-white p-6 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-bold mb-4">
+       Öffnungszeiten
+      </h2>
+      <ul class="list-disc list-inside mb-4">
+       <li>
+        Montag - Freitag: 10:00 - 18:00 Uhr
+       </li>
+       <li>
+        Samstag: 10:00 - 14:00 Uhr
+       </li>
+       <li>
+        Sonntag: Geschlossen
+       </li>
+      </ul>
+     </div>
+    </section>
+    <section class="mb-8" id="contact">
+     <div class="bg-white p-6 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-bold mb-4">
+       Standort und Kontakt
+      </h2>
+      <p class="text-lg mb-2">
+       <strong>
+        Adresse:
+       </strong>
+       Waldweg 12, 12345 Tierstadt, Deutschland
+      </p>
+      <p class="text-lg mb-2">
+       <strong>
+        Telefon:
+       </strong>
+       +49 123 456789
+      </p>
+      <p class="text-lg mb-2">
+       <strong>
+        E-Mail:
+       </strong>
+       info@tierheim-Tieroase.de
+      </p>
+      <p class="text-lg mb-2">
+       <strong>
+        Website:
+       </strong>
+       www.tierheim-Tieroase.de
+      </p>
+     </div>
+    </section>
+    <section class="mb-8" id="quiz">
+     <div class="bg-white p-6 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-bold mb-4">
+       Finden Sie Ihr perfektes Haustier
+      </h2>
+      <p class="text-lg mb-4">
+       Nutzen Sie unser KI-Tool, eines der besten auf dem Markt, um Ihr perfektes Haustier aus unserem Tierheim zu finden.
+      </p>
+      <form onsubmit="event.preventDefault(); findPerfectPet();">
+       <div class="mb-4">
+        <label class="block text-lg mb-2" for="activityLevel">
+         Wie aktiv sind Sie?
+        </label>
+        <select class="border border-gray-300 rounded w-full py-2 px-3" id="activityLevel" required="">
+         <option value="">
+          Bitte wählen...
+         </option>
+         <option value="low">
+          Wenig aktiv
+         </option>
+         <option value="medium">
+          Mittel aktiv
+         </option>
+         <option value="high">
+          Sehr aktiv
+         </option>
+        </select>
+       </div>
+       <div class="mb-4">
+        <label class="block text-lg mb-2" for="homeType">
+         Welche Art von Zuhause haben Sie?
+        </label>
+        <select class="border border-gray-300 rounded w-full py-2 px-3" id="homeType" required="">
+         <option value="">
+          Bitte wählen...
+         </option>
+         <option value="apartment">
+          Wohnung
+         </option>
+         <option value="house">
+          Haus mit Garten
+         </option>
+        </select>
+       </div>
+       <div class="mb-4">
+        <label class="block text-lg mb-2" for="petType">
+         Welche Art von Haustier bevorzugen Sie?
+        </label>
+        <select class="border border-gray-300 rounded w-full py-2 px-3" id="petType" required="">
+         <option value="">
+          Bitte wählen...
+         </option>
+         <option value="dog">
+          Hund
+         </option>
+         <option value="cat">
+          Katze
+         </option>
+         <option value="small">
+          Kleintier
+         </option>
+        </select>
+       </div>
+       <div class="mb-4">
+        <label class="block text-lg mb-2" for="allergies">
+         Haben Sie Allergien gegen Tiere?
+        </label>
+        <select class="border border-gray-300 rounded w-full py-2 px-3" id="allergies" required="">
+         <option value="">
+          Bitte wählen...
+         </option>
+         <option value="yes">
+          Ja
+         </option>
+         <option value="no">
+          Nein
+         </option>
+        </select>
+       </div>
+       <button class="bg-[#DE7C46] text-white px-4 py-2 rounded-full hover:bg-[#c96e3f]" type="submit">
+        Perfektes Haustier finden
+       </button>
+      </form>
+     </div>
+    </section>
+   </main>
+   <aside class="w-full md:w-1/4 pl-0 md:pl-4 mt-8 md:mt-0">
+    <div class="sidebar mb-8">
+     <h2 class="text-xl font-bold mb-2">
+      Spenden
+     </h2>
+     <p class="mb-4">
+      Unterstützen Sie unser Tierheim mit einer Spende. Jeder Betrag hilft uns, die Tiere zu versorgen und ihnen ein besseres Leben zu ermöglichen.
+     </p>
+     <form onsubmit="event.preventDefault(); donate();">
+      <div class="mb-4">
+       <label class="block text-lg mb-2" for="donationAmount">
+        Betrag (in Euro)
+       </label>
+       <input class="border border-gray-300 rounded w-full py-2 px-3" id="donationAmount" required="" type="number"/>
+      </div>
+      <button class="bg-white text-[#000000] px-4 py-2 rounded-full hover:bg-gray-200" type="submit">
+       Spenden
+      </button>
+     </form>
+    </div>
+    <div class="sidebar">
+     <h2 class="text-xl font-bold mb-2">
+      Chat Bot
+     </h2>
+     <p class="mb-4">
+      Stellen Sie uns Ihre Fragen und wir helfen Ihnen gerne weiter.
+     </p>
+     <form onsubmit="event.preventDefault(); sendMessage();">
+      <div class="mb-4">
+       <label class="block text-lg mb-2" for="chatMessage">
+        Nachricht
+       </label>
+       <textarea class="border border-gray-300 rounded w-full py-2 px-3" id="chatMessage" required="" rows="4"></textarea>
+      </div>
+      <button class="bg-white text-[#DE7C46] px-4 py-2 rounded-full hover:bg-gray-200" type="submit">
+       Senden
+      </button>
+     </form>
+    </div>
+   </aside>
+  </div>
+  <script>
+   function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+  </script>
+ </body>
 </html>
