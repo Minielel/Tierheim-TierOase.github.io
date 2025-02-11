@@ -15,8 +15,8 @@
 
 /* Vergrößerte Suchleiste bei Klick auf den Suchbutton */
 .search-expanded {
-    width: 12rem; /* 48px */
-    padding-left: 2.3rem; /* 10px */
+    width: 10rem; /* 48px */
+    padding-left: 2.5rem; /* 10px */
     padding-right: 1rem; /* 4px */
 }
 
