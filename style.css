@@ -1,0 +1,66 @@
+/* Standardmäßig kleine Suchleiste */
+#searchInput {
+    width: 0;
+    transition: all 0.3s ease;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Vergrößerte Suchleiste bei Fokus */
+#searchInput:focus {
+    width: 12rem; /* 48px */
+    padding-left: 2.5rem; /* 10px */
+    padding-right: 1rem; /* 4px */
+}
+
+/* Vergrößerte Suchleiste bei Klick auf den Suchbutton */
+.search-expanded {
+    width: 12rem; /* 48px */
+    padding-left: 2.5rem; /* 10px */
+    padding-right: 1rem; /* 4px */
+}
+
+ /* Standardm��ig kleine Suchleiste */
+ #searchInput {
+    width: 8rem; /* 32px */
+    transition: all 0.3s ease;
+    padding-left: 2.5rem; /* 10px */
+    padding-right: 1rem; /* 4px */
+}
+
+    /* Vergr��erte Suchleiste bei Fokus */
+    #searchInput:focus {
+        width: 20rem; /* 80px */
+    }
+
+/* Vergr��erte Suchleiste bei Klick auf den Suchbutton */
+.search-expanded {
+    width: 20rem; /* 80px */
+}
+
+/* Spendenaufruf an der Seite */
+aside {
+    position: sticky !important;
+    top: 1rem;
+    background-color: #DE7C46;
+    color: white;
+    padding: 1rem;
+    margin-left: 10px;
+    border-radius: 25px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1800px;
+}
+
+    .sidebar button {
+        background-color: white;
+        color: #DE7C46;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .sidebar button:hover {
+            background-color: #f0f0f0;
+        }
