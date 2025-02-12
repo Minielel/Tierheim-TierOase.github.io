@@ -42,7 +42,7 @@
 aside {
     position: sticky !important;
     top: 1rem;
-    background-color: #DE7C46;
+    background-color: #f87e60;
     color: white;
     padding: 1rem;
     margin-left: 10px;
@@ -53,7 +53,7 @@ aside {
 
     .sidebar button {
         background-color: white;
-        color: #DE7C46;
+        color: #f87e60;
         border: none;
         padding: 0.5rem 1rem;
         border-radius: 0.5rem;
